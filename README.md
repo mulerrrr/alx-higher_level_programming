@@ -1,1 +1,1 @@
-0x00-python-hello_world
+0x06. Python - Classes and Objects
