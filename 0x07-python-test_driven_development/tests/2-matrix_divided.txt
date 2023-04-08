@@ -1,0 +1,111 @@
+``2-matrix_divided`` module test
+================================
+
+Using ``matrix_divided`` function
+-------------------------------
+
+This text file contains test cases for the function ``matrix_divided``.
+The function is supposed to divide all the elements of a matrix.
+First import function to the varaible matrix_divided:
+    
+    >>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+
+Now use it:
+
+Test_1 verify type of matrix
+----------------------------
+    >>> matrix = [[1, 2, 3], [1.3, 3.5, "HOLA"], ["SI", 3, 2.4]]
+    >>> print(matrix_divided(matrix, 1))
+    Traceback (most recent call last):
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+Test_2 verify len of each row
+-----------------------------
+    >>> matrix = [[1, 2, 3], [3.4, 4.5, 6], [1.2, 3, 7, 7]]
+    >>> print(matrix_divided(matrix, 1))
+    Traceback (most recent call last):
+    TypeError: Each row of the matrix must have the same size
+
+Test_3 div must be a number int or float
+----------------------------------------
+    >>> matrix = [[1, 2, 3], [3.4, 4.5, 6], [1.2, 3, 7]]
+    >>> print(matrix_divided(matrix, "3"))
+    Traceback (most recent call last):
+    TypeError: div must be a number
+
+Test_4 div can't be 0
+--------------------------
+    >>> matrix = [[1, 2, 3], [3.4, 4.5, 6], [1.2, 3, 7]]
+    >>> print(matrix_divided(matrix, 0))
+    Traceback (most recent call last):
+    ZeroDivisionError: division by zero
+
+Test_5 All elements of the new matrix should be rounded to 2 decimal places
+---------------------------------------------------------------------------
+    >>> matrix = [[1, 2, 3], [4, 6, 7], [9, 13, 70]]
+    >>> print(matrix_divided(matrix, 2))
+    [[0.5, 1.0, 1.5], [2.0, 3.0, 3.5], [4.5, 6.5, 35.0]]
+
+Test_6 matrix argument is not a list
+------------------------------------
+    >>> matrix = {1: 34, 2: 23}
+    >>> print(matrix_divided(matrix, 2))
+    Traceback (most recent call last):
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+Test_7 matrix argument is None
+---------------------------------------
+    >>> matrix = None
+    >>> print(matrix_divided(matrix, 2))
+    Traceback (most recent call last):
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+Test_8 div argument is None
+---------------------------------------
+    >>> matrix = [[1, 2, 3], [4, 6, 7], [9, 13, 70]]
+    >>> print(matrix_divided(matrix, None))
+    Traceback (most recent call last):
+    TypeError: div must be a number
+
+Test_9 matrix list have a None value
+---------------------------------------
+    >>> matrix = [[1, 2, None], [4, 6, 7], [9, 13, 70]]
+    >>> print(matrix_divided(matrix, 2))
+    Traceback (most recent call last):
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+Test_10 div as sqrt(-1)
+---------------------------------------
+    >>> matrix = [[1, 2, 3], [4, 6, 7], [9, 13, 70]]
+    >>> print(matrix_divided(matrix, 3j))
+    Traceback (most recent call last):
+    TypeError: div must be a number
+
+Test_11 matrix with lists and other elements inside
+----------------------------------------------------
+    >>> matrix = [(1, 2), [4, 5]]
+    >>> matrix_divided(matrix, 3)
+    Traceback (most recent call last):
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+Test_12 empty matrix
+--------------------
+    >>> matrix = [[], []]
+    >>> matrix_divided(matrix, 2)
+    Traceback (most recent call last):
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+Test_13 empty element
+----------------------
+    >>> matrix = [[2, 3,4, 5], []]
+    >>> matrix_divided(matrix, 2)
+    Traceback (most recent call last):
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+Test_14 matrix is 3d
+--------------------
+    >>> matrix = [[[3, 3, 4], [2, 1]], [2, 3]]
+    >>> matrix_divided(matrix, 2)
+    Traceback (most recent call last):
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
