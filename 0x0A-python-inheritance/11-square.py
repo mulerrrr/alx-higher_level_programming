@@ -1,3 +1,4 @@
+
 #!/usr/bin/python3
 """This module contain classes called BaseGeometry, Rectangle, Square"""
 
@@ -22,4 +23,3 @@ class Square(Rectangle):
     def __str__(self):
         """__str__ method"""
         return ("[Square] {}/{}".format(self.__size, self.__size))
-
