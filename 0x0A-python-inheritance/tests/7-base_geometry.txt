@@ -1,0 +1,65 @@
+========================================
+Test suite for 7-base_geometry.py module
+========================================
+
+This module contains a class called BaseGeometry.
+It has inside a public class method called print_sorted that prints
+the list in ascending sort. All elements of the list are asumed to be int.
+
+First we import the class, and assign it to Mylist variable:
+-------------------------------------------------------------
+    >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+
+Test cases
+----------
+    >>> Obj = BaseGeometry()
+    >>> Obj.integer_validator("Jose", 98)
+    >>> Obj.integer_validator("Hello", "World")
+    Traceback (most recent call last):
+    ...
+    TypeError: Hello must be an integer
+    >>> Obj.integer_validator("OOP", [11, 4])
+    Traceback (most recent call last):
+    ...
+    TypeError: OOP must be an integer
+    >>> Obj.integer_validator("Betty", 6 - 4)
+    >>> Obj.integer_validator("Holberton", 'Hello')
+    Traceback (most recent call last):
+    ...
+    TypeError: Holberton must be an integer
+    >>> Obj.integer_validator("Today", -15)
+    Traceback (most recent call last):
+    ...
+    ValueError: Today must be greater than 0
+    >>> Obj.integer_validator("Hey", 0)
+    Traceback (most recent call last):
+    ...
+    ValueError: Hey must be greater than 0
+    >>> Obj.area()
+    Traceback (most recent call last):
+    ...
+    Exception: area() is not implemented
+    >>> Obj.integer_validator()
+    Traceback (most recent call last):
+    ...
+    TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
+    >>> Obj.integer_validator("Name")
+    Traceback (most recent call last):
+    ...
+    TypeError: integer_validator() missing 1 required positional argument: 'value'
+    >>> Obj.integer_validator("Name", (4,))
+    Traceback (most recent call last):
+    ...
+    TypeError: Name must be an integer
+    >>> Obj.integer_validator("Name", True)
+    Traceback (most recent call last):
+    ...
+    TypeError: Name must be an integer
+    >>> Obj.integer_validator("Name", None)
+    Traceback (most recent call last):
+    ...
+    TypeError: Name must be an integer
+    >>> Obj.integer_validator("Name", {3,4})
+    Traceback (most recent call last):
+    ...
+    TypeError: Name must be an integer
